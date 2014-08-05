@@ -520,7 +520,7 @@ namespace HelloGPSWorld {
 					 } else {
 						 try {
 							 nextLine = this->serialPort1->ReadLine();
-							 din->WriteLine(nextLine);
+							 din->WriteLine(DateTime::Now.ToString("O") + "," + nextLine);
 							 //rtbGPSOutput->Text = nextLine; //rtbGPSOutput->AppendText(nextLine);
 						 } catch(TimeoutException^) {
 							 this->rtbGPSOutput->AppendText("GPS Timed Out");
